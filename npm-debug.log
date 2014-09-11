@@ -1,0 +1,87 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-l',
+1 verbose cli   'foursquare-angular' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 warn package.json damienremarstestwopata@0.0.0 No description
+5 warn package.json damienremarstestwopata@0.0.0 No repository field.
+6 warn package.json damienremarstestwopata@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'foursquare-angular', null ]
+9 verbose cache add name=undefined spec="foursquare-angular" args=["foursquare-angular",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'foursquare-angular',
+10 verbose parsed url   path: 'foursquare-angular',
+10 verbose parsed url   href: 'foursquare-angular' }
+11 silly lockFile c5ce4da7-foursquare-angular foursquare-angular
+12 verbose lock foursquare-angular C:\Users\Damien\AppData\Roaming\npm-cache\c5ce4da7-foursquare-angular.lock
+13 silly lockFile c5ce4da7-foursquare-angular foursquare-angular
+14 silly lockFile c5ce4da7-foursquare-angular foursquare-angular
+15 verbose addNamed [ 'foursquare-angular', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 1ae5a492-foursquare-angular foursquare-angular@
+18 verbose lock foursquare-angular@ C:\Users\Damien\AppData\Roaming\npm-cache\1ae5a492-foursquare-angular.lock
+19 silly addNameRange { name: 'foursquare-angular', range: '*', hasData: false }
+20 verbose url raw foursquare-angular
+21 verbose url resolving [ 'https://registry.npmjs.org/', './foursquare-angular' ]
+22 verbose url resolved https://registry.npmjs.org/foursquare-angular
+23 info trying registry request attempt 1 at 11:16:30
+24 http GET https://registry.npmjs.org/foursquare-angular
+25 http 404 https://registry.npmjs.org/foursquare-angular
+26 verbose headers { date: 'Thu, 11 Sep 2014 09:16:33 GMT',
+26 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 verbose headers   'content-type': 'application/json',
+26 verbose headers   'cache-control': 'max-age=0',
+26 verbose headers   'content-length': '52',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   age: '0',
+26 verbose headers   'x-served-by': 'cache-fra1234-FRA',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1410426992.839882,VS0,VE430',
+26 verbose headers   'keep-alive': 'timeout=10, max=50',
+26 verbose headers   connection: 'Keep-Alive' }
+27 silly registry.get cb [ 404,
+27 silly registry.get   { date: 'Thu, 11 Sep 2014 09:16:33 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-fra1234-FRA',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1410426992.839882,VS0,VE430',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly lockFile 1ae5a492-foursquare-angular foursquare-angular@
+29 silly lockFile 1ae5a492-foursquare-angular foursquare-angular@
+30 error 404 404 Not Found: foursquare-angular
+30 error 404
+30 error 404 'foursquare-angular' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'damienremarstestwopata'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Windows_NT 6.2.9200
+32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-l" "foursquare-angular"
+33 error cwd c:\Users\Damien\www\damien-remars-test-wopata
+34 error node -v v0.10.28
+35 error npm -v 1.4.9
+36 error code E404
+37 verbose exit [ 1, true ]
