@@ -8,7 +8,7 @@
  * Controller of the damienRemarsTestWopataApp
  */
 angular.module('damienRemarsTestWopataApp')
-  .controller('MainCtrl', ['$scope', '$resource', function ($scope, $resource) {
+  .controller('MainCtrl', ['$scope', '$resource', '$parse', function ($scope, $resource, $parse) {
     $resource('https://api.foursquare.com/v2/venues/explore').get({
     	near:"Bordeaux", 
     	oauth_token:"RPLFI1IXWXIPGWFQQ52WNVI00Q5KBOL1EIQMQB1UJM1QYSUZ",
@@ -16,5 +16,11 @@ angular.module('damienRemarsTestWopataApp')
     }, function(callback){
     	console.log(callback);
     	$scope.items = callback.response.groups[0].items;
+
+/*
+    	$parse(callback.response.groups[0].items)($scope);
+    	$scope.debug = $scope;
+    	console.log($scope);
+    	*/
     });
   }]);
