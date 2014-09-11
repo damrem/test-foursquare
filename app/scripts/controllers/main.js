@@ -12,16 +12,15 @@ angular.module('damienRemarsTestWopataApp')
 
   	fsService.async().then(function(data){
   		console.log(data);
-    	$scope.items = data.response.groups[0].items;
+    	//$scope.items = data.response.groups[0].items;
+
+    	$scope.venues = [];
+
+    	data.response.groups[0].items.map(function(item){
+
+    		$scope.venues.push(item.venue);
+    	});
+    	console.log($scope.venues);
   	});
-  	/*
-    $resource('https://api.foursquare.com/v2/venues/explore').get({
-    	near:"Bordeaux", 
-    	oauth_token:"RPLFI1IXWXIPGWFQQ52WNVI00Q5KBOL1EIQMQB1UJM1QYSUZ",
-    	v:"20140911"
-    }, function(callback){
-    	console.log(callback);
-    	$scope.items = callback.response.groups[0].items;
-    });
-*/
+  	
   }]);

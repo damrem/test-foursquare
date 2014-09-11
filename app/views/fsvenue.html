@@ -1,0 +1,9 @@
+<div>
+  <h1>{{ venue.name }}</h1>
+  <div><p ng-repeat="addressLine in venue.location.formattedAddress">{{ addressLine }}</p></div>
+  <p>{{ venue.location.country }}</p>
+  <p>{{ venue.location.lat | number:2 }}, {{ venue.location.lng | number:2 }}</p>
+  <p>{{ venue.stats.checkinsCount }} checkins by {{ venue.stats.usersCount }} users</p>
+  <!--<pre>{{ venue | json }}-->
+  </pre>
+</div>

@@ -1,9 +1,1 @@
-<div ng-repeat="item in items">
-  <h1>{{item.venue.name}}</h1>
-  <div><p ng-repeat="addressLine in item.venue.location.formattedAddress">{{addressLine}}</p></div>
-  <p>{{item.venue.location.country}}</p>
-  <p>{{item.venue.location.lat|number:2}}, {{item.venue.location.lng|number:2}}</p>
-  <p>{{item.venue.stats.checkinsCount}} checkins by {{item.venue.stats.usersCount}} users</p>
-  <!--<pre>{{item|json}}-->
-  </pre>
-</div>
+<div ng-repeat="venue in venues" fs-venue="venue"></div>
