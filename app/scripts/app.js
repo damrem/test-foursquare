@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name damienRemarsTestWopataApp
+ * @name testFoursquare
  * @description
- * # damienRemarsTestWopataApp
+ * # testFoursquare
  *
  * Main module of the application.
  */
 angular
-  .module('damienRemarsTestWopataApp', [
+  .module('test-foursquare', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

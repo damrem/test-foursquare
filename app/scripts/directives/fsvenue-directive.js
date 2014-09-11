@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc directive
- * @name damienRemarsTestWopataApp.directive:fsVenue
+ * @name testFoursquare.directive:fsVenue
  * @description
  * # fsVenue
  */
-angular.module('damienRemarsTestWopataApp')
+angular.module('test-foursquare')
   .directive('fsVenue', function () {
     return {
       templateUrl: 'views/fsvenue.html',

@@ -2,17 +2,17 @@
 
 /**
  * @ngdoc function
- * @name damienRemarsTestWopataApp.controller:MainCtrl
+ * @name testFoursquare.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the damienRemarsTestWopataApp
+ * Controller of the testFoursquare
  */
-angular.module('damienRemarsTestWopataApp')
-  .controller('MainCtrl', ['$scope', 'fsService', function ($scope, fsService) {
+angular.module('test-foursquare')
+  .controller('MainCtrl', ['$scope', 'fsExploreVenueService', function ($scope, fsExploreVenueService) {
 
-  	fsService.async().then(function(data){
+  	fsExploreVenueService.async().then(function(data){
+
   		console.log(data);
-    	//$scope.items = data.response.groups[0].items;
 
     	$scope.venues = [];
 
@@ -20,6 +20,7 @@ angular.module('damienRemarsTestWopataApp')
 
     		$scope.venues.push(item.venue);
     	});
+
     	console.log($scope.venues);
   	});
   	

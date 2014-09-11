@@ -7,8 +7,8 @@
  * # FoursquareExploreVenueService
  * Service in the damienRemarsTestWopataApp.
  */
-angular.module('damienRemarsTestWopataApp')
-  .factory('fsService', ['$resource', function fsService($resource) {
+angular.module('test-foursquare')
+  .factory('fsExploreVenueService', ['$resource', function fsService($resource) {
 
 	    var service = {
 	    async: function() {

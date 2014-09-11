@@ -3,7 +3,7 @@
 describe('Service: FoursquareExploreVenueService', function () {
 
   // load the service's module
-  beforeEach(module('damienRemarsTestWopataApp'));
+  beforeEach(module('test-foursquare'));
 
   // instantiate service
   var FoursquareExploreVenueService;
