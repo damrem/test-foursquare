@@ -7,13 +7,27 @@
  * # MainCtrl
  * Controller of the testFoursquare
  */
-angular.module('test-foursquare')
-  .controller('MainCtrl', ['$scope', 'fsExploreVenueService', function ($scope, fsExploreVenueService) {
+angular.module('app')
+  .controller('MainCtrl', ['$scope', 'apiService', function ($scope, apiService) {
 
-  	fsExploreVenueService.async().then(function(data){
+  	apiService.async().then(function(jsonData){
 
-  		console.log(data);
+      console.log(jsonData.data);
 
+      //jsonData = JSON.parse(data);
+
+  		console.log('...'+jsonData.data);
+
+      $scope.items = [];
+      for(var i in jsonData.data)
+      {
+        console.log('- '+i+':'+jsonData.data[i]);
+        $scope.items.push(jsonData[i]);
+        for(var prop in jsonData.data[i]){
+          console.log('---'+prop+': '+jsonData.data[i][prop]);
+        }
+      }
+      /*
     	$scope.venues = [];
 
     	data.response.groups[0].items.map(function(item){
@@ -22,6 +36,7 @@ angular.module('test-foursquare')
     	});
 
     	console.log($scope.venues);
+      */
   	});
   	
   }]);

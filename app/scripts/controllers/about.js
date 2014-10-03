@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the testFoursquare
  */
-angular.module('test-foursquare')
+angular.module('app')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

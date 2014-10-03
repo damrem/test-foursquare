@@ -1,15 +1,7 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name testFoursquare
- * @description
- * # testFoursquare
- *
- * Main module of the application.
- */
 angular
-  .module('test-foursquare', [
+  .module('app', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
