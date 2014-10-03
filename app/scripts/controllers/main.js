@@ -10,57 +10,37 @@
 angular.module('app')
   .controller('MainCtrl', ['$scope', '$log', 'apiService', function ($scope, $log, apiService) {
 
+    $scope.page = 1;
 
-    apiService.jsonp(0, 10).then(function(data){
-      console.log('ok'+data);
-    });
-    /*
-    apiService.async(0,10)
-      .success(function(){
+    
 
-      })
-      .error(function(){
+    $scope.gotoPage = function(pg){
+      $scope.page = pg;
+    };
 
-      });
-  */
-    //console.log('call: '+apiService.async(0, 10));
-/*
-    for(var prop in apiService) {
-      $log.log(prop+':'+apiService[prop]);
-    }
-  	
-    $log.log('call: '+apiService.async(0, 10)).then(function(jsonData){
+    apiService.jsonp(($scope.page-1)*10, 100).then(function(jsondata){
+      console.log('ok'+jsondata);
 
-      $log.log(jsonData.data);
+      $scope.pages = [];
+      var currentpage = 1;
+      var nbPages = Math.ceil(jsondata.recordsFiltered / 10);
 
-      //jsonData = JSON.parse(data);
-
-  		$log.log('...'+jsonData.data);
-*/
-
-/*
-      $scope.items = [];
-
-      
-      for(var i in jsonData.data)
+      for(var j=0; j<nbPages; j++)
       {
-        $log.log('- '+i+':'+jsonData.data[i]);
-        $scope.items.push(jsonData[i]);
-        for(var prop in jsonData.data[i]){
-          $log.log('---'+prop+': '+jsonData.data[i][prop]);
-        }
+        $scope.pages.push(currentpage);
+        currentpage++;
       }
-*/
-      /*
-    	$scope.venues = [];
 
-    	data.response.groups[0].items.map(function(item){
+      for(var prop in jsondata){
+        console.log(prop+':'+jsondata[prop]);
+      }
 
-    		$scope.venues.push(item.venue);
-    	});
-
-    	$log.log($scope.venues);
-      */
-  	//});
+      $scope.items = [];
+      for(var i in jsondata.data){
+        console.log(i+':'+jsondata.data[i]);
+        $scope.items.push(jsondata.data[i]);
+      }
+    });
+    
   	
   }]);
