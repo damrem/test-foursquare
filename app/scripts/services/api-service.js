@@ -1,18 +1,15 @@
 'use strict';
 
 angular.module('app')
-  .factory('apiService', ['$resource', function fsService($resource) {
+.service('apiService', ['$http', function($http) {
 
-	    var service = {
-	    async: function(start, limit) {
-	      // $http returns a promise, which has a then function, which also returns a promise
-	      
-	      return $resource('scripts/services/data.json')
-	      .get({start:start, limit:limit})
-	      .$promise;
-	    }
-	  };
-	  return service;
-
-	 // return 
-  }]);
+	return {
+			jsonp: function(start, limit){
+				var url='http://administration.dolist.net/job/test/tech/ux/code/webservice.php';
+				return $http.jsonp(url+'?start='+start+'&limit='+limit+'&callback=angular.callbacks._0')
+				.then(function(result){
+					return result.data;
+				});
+			}
+		};
+}]);

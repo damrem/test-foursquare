@@ -8,25 +8,49 @@
  * Controller of the testFoursquare
  */
 angular.module('app')
-  .controller('MainCtrl', ['$scope', 'apiService', function ($scope, apiService) {
+  .controller('MainCtrl', ['$scope', '$log', 'apiService', function ($scope, $log, apiService) {
 
-  	apiService.async().then(function(jsonData){
 
-      console.log(jsonData.data);
+    apiService.jsonp(0, 10).then(function(data){
+      console.log('ok'+data);
+    });
+    /*
+    apiService.async(0,10)
+      .success(function(){
+
+      })
+      .error(function(){
+
+      });
+  */
+    //console.log('call: '+apiService.async(0, 10));
+/*
+    for(var prop in apiService) {
+      $log.log(prop+':'+apiService[prop]);
+    }
+  	
+    $log.log('call: '+apiService.async(0, 10)).then(function(jsonData){
+
+      $log.log(jsonData.data);
 
       //jsonData = JSON.parse(data);
 
-  		console.log('...'+jsonData.data);
+  		$log.log('...'+jsonData.data);
+*/
 
+/*
       $scope.items = [];
+
+      
       for(var i in jsonData.data)
       {
-        console.log('- '+i+':'+jsonData.data[i]);
+        $log.log('- '+i+':'+jsonData.data[i]);
         $scope.items.push(jsonData[i]);
         for(var prop in jsonData.data[i]){
-          console.log('---'+prop+': '+jsonData.data[i][prop]);
+          $log.log('---'+prop+': '+jsonData.data[i][prop]);
         }
       }
+*/
       /*
     	$scope.venues = [];
 
@@ -35,8 +59,8 @@ angular.module('app')
     		$scope.venues.push(item.venue);
     	});
 
-    	console.log($scope.venues);
+    	$log.log($scope.venues);
       */
-  	});
+  	//});
   	
   }]);
