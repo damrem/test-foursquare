@@ -7,18 +7,16 @@
  * # MainCtrl
  * Controller of the testFoursquare
  */
-angular.module('app')
-  .controller('MainCtrl', ['$scope', '$log', 'apiService', function ($scope, $log, apiService) {
+ angular.module('app')
+ .controller('MainCtrl', ['$scope', '$routeParams', 'apiService', function ($scope, $routeParams, apiService) {
 
-    $scope.page = 1;
+  $scope.gotoPage = function(pg){
 
-    
+    console.log('.gotoPage('+pg);
+    $scope.page = pg;
+    console.log($scope.page);
 
-    $scope.gotoPage = function(pg){
-      $scope.page = pg;
-    };
-
-    apiService.jsonp(($scope.page-1)*10, 100).then(function(jsondata){
+    apiService.jsonp(($scope.page-1)*10, 10).then(function(jsondata){
       console.log('ok'+jsondata);
 
       $scope.pages = [];
@@ -36,11 +34,17 @@ angular.module('app')
       }
 
       $scope.items = [];
+      console.log('nbDatas='+jsondata.data.length);
       for(var i in jsondata.data){
+        console.log('plop');
         console.log(i+':'+jsondata.data[i]);
+        console.log(jsondata.data[i].Title);
         $scope.items.push(jsondata.data[i]);
       }
     });
+  };
+
+  $scope.gotoPage(1);
     
-  	
-  }]);
+
+}]);
