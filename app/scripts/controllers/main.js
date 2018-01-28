@@ -16,8 +16,11 @@
     $scope.page = pg;
     console.log($scope.page);
 
-    apiService.jsonp(($scope.page-1)*10, 10).then(function(jsondata){
-      console.log('ok'+jsondata);
+    console.log('initiating the call');
+    apiService.jsonp(($scope.page-1)*10, 10, 
+
+      function(jsondata){
+      console.log('ok: '+jsondata);
 
       $scope.pages = [];
       var currentpage = 1;
@@ -30,7 +33,7 @@
       }
 
       for(var prop in jsondata){
-        console.log(prop+':'+jsondata[prop]);
+        console.log('in jsondata: '+prop+':'+jsondata[prop]);
       }
 
       $scope.items = [];
@@ -38,10 +41,17 @@
       for(var i in jsondata.data){
         console.log('plop');
         console.log(i+':'+jsondata.data[i]);
-        console.log(jsondata.data[i].Title);
+        //console.log(jsondata.data[i].Title);
         $scope.items.push(jsondata.data[i]);
       }
-    });
+    },
+
+    function error(err){
+      console.log('ERROR('+err);
+    }
+
+
+    );
   };
 
   $scope.gotoPage(1);
